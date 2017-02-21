@@ -13,7 +13,9 @@ while True:
     guess = int(raw_input(">> "))
     counter += 1
     if guess != random_number:
-        if guess > random_number:
+        if guess > 100 or guess < 1:
+            print "You idiot!! That number is not between 1 and 100. Try again."
+        elif guess > random_number:
             print "Your guess is too high. Try again."
         else:
             print "Your number is too low. Try again."
