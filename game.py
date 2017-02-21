@@ -7,4 +7,10 @@ print "%s, I'm thinking of a number between 1 and 100." % player_name
 
 random_number = randint(1, 101)
 print "Guess what number I am thinking: "
-guess = raw_input(">> ")
+
+while True:
+    guess = raw_input(">> ")
+    if guess != random_number:
+        break
+    else:
+        break
