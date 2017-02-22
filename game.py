@@ -6,7 +6,7 @@ print "%s, I'm thinking of a number between 1 and 100." % player_name
 playing_game = True
 best_score = 0
 
-while playing_game:   
+while playing_game:
     print "Great! Let's play" 
     random_number = randint(1, 100)
     print random_number
@@ -30,6 +30,11 @@ while playing_game:
                 print "Your number is too low. Try again."
         else:
             print "Congratulations! You found my number in %d guesses!" % counter
+            if best_score == 0 or best_score > counter:
+                best_score = counter
+                print "Congratulations! You have the new best score!"
+            else:
+                print "The score to beat is %d" % best_score
             break
     play_again = raw_input("Would you like to play again? (Yes/No) ")
     if play_again == "Yes":
