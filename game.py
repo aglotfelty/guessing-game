@@ -10,15 +10,39 @@ print "Guess what number I am thinking: "
 counter = 0
 
 while True:
-    guess = int(raw_input(">> "))
     counter += 1
-    if guess != random_number:
-        if guess > 100 or guess < 1:
-            print "You idiot!! That number is not between 1 and 100. Try again."
-        elif guess > random_number:
-            print "Your guess is too high. Try again."
+    try:
+        guess = int(raw_input(">> "))
+        if guess != random_number:
+            if guess > 100 or guess < 1:
+                print "You idiot!! That number is not between 1 and 100. Try again."
+            elif guess > random_number:
+                print "Your guess is too high. Try again."
+            else:
+                print "Your number is too low. Try again."
         else:
-            print "Your number is too low. Try again."
-    else:
-        print "Congratulations! You found my number in %d guesses!" % counter
-        break
+            print "Congratulations! You found my number in %d guesses!" % counter
+            break
+    except ValueError:
+        print "That is not a number!"
+
+
+# while True:
+#     while True:
+#         counter += 1
+#         try:
+#             guess = int(raw_input(">> "))
+#             break
+#         except ValueError:
+#             print "That is not a number! Try again."
+
+#     if guess != random_number:
+#         if guess > 100 or guess < 1:
+#             print "You idiot!! That number is not between 1 and 100. Try again."
+#         elif guess > random_number:
+#             print "Your guess is too high. Try again."
+#         else:
+#             print "Your number is too low. Try again."
+#     else:
+#         print "Congratulations! You found my number in %d guesses!" % counter
+#         break
